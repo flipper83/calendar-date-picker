@@ -1,0 +1,4 @@
+<resources>
+  <string name="cdp_dayofweek_format">EEE</string>
+  <string name="cdp_month_format">MMMM</string>
+</resources>

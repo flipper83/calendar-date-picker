@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="cdp_base_month">
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">@dimen/cdp_font_title</item>
+  </style>
+  <style name="cdp_base_subtitle">
+    <item name="android:color">@android:color/black</item>
+    <item name="android:textSize">@dimen/cdp_font_subtitle</item>
+  </style>
+  <style name="cdp_base_header">
+    <item name="android:background">@android:color/white</item>
+    <item name="android:paddingTop">@dimen/cdp_gap_high</item>
+    <item name="android:paddingBottom">@dimen/cdp_gap_high</item>
+  </style>
+  <style name="cdp_base_day_of_week">
+    <item name="android:gravity">center</item>
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textSize">@dimen/cdp_font_day_of_week</item>
+  </style>
+  <style name="cdp_base_day">
+    <item name="android:gravity">center</item>
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textSize">@dimen/cdp_font_day</item>
+    <item name="android:paddingTop">@dimen/cdp_gap_small</item>
+    <item name="android:paddingBottom">@dimen/cdp_gap_small</item>
+  </style>
+
+  <dimen name="cdp_gap_small">5dp</dimen>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cdp_ll_day_of_week"
+    >
+  <TextView
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      style="@style/cdp_base_day_of_week"
+      android:text="mon"/>
+  <TextView
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      style="@style/cdp_base_day_of_week"
+      android:text="mon"/>
+  <TextView
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      style="@style/cdp_base_day_of_week"
+      android:text="mon"/>
+  <TextView
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      style="@style/cdp_base_day_of_week"
+      android:text="mon"/>
+  <TextView
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      style="@style/cdp_base_day_of_week"
+      android:text="mon"/>
+  <TextView
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      style="@style/cdp_base_day_of_week"
+      android:text="mon"/>
+  <TextView
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      style="@style/cdp_base_day_of_week"
+      android:text="mon"/>
+
+</LinearLayout>

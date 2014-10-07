@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <RelativeLayout
+      android:id="@+id/cdp_rl_calendar_header"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      style="@style/cdp_base_header"
+      >
+    <TextView
+        android:id="@+id/cdp_tv_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/cdp_base_month"
+        android:layout_centerHorizontal="true"
+        android:text="Noviembre"
+        />
+    <TextView
+        android:id="@+id/cdp_tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/cdp_base_subtitle"
+        android:layout_centerHorizontal="true"
+        android:text="This is a subtitle"
+        android:layout_below="@id/cdp_tv_month"
+        />
+
+    <ImageView
+        android:id="@+id/cdp_bt_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cdp_ic_btn_find_prev"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/cdp_gap_high"
+        />
+
+    <ImageView
+        android:id="@+id/cdp_bt_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cdp_ic_btn_find_next"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/cdp_gap_high"
+        android:layout_alignParentRight="true"
+        />
+
+  </RelativeLayout>
+  <include layout="@layout/cdp_days_of_week"/>
+<com.karumi.calendardatepicker.MonthView
+    android:id="@+id/cdp_ll_day_of_month"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+
+
+
+</LinearLayout>

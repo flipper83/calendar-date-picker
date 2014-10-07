@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="cdp_gap_high">16dp</dimen>
+  <dimen name="cdp_font_title">20sp</dimen>
+  <dimen name="cdp_font_subtitle">16sp</dimen>
+  <dimen name="cdp_font_day_of_week">16sp</dimen>
+  <dimen name="cdp_font_day">16sp</dimen>
+</resources>
