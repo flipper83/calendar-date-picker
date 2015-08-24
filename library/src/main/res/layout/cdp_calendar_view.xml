@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
   <RelativeLayout
       android:id="@+id/cdp_rl_calendar_header"
       android:layout_width="match_parent"
@@ -26,6 +27,7 @@
         android:layout_centerHorizontal="true"
         android:text="This is a subtitle"
         android:layout_below="@id/cdp_tv_month"
+        android:visibility="gone"
         />
 
     <ImageView

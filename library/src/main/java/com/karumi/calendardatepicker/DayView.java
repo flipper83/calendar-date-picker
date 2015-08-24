@@ -42,23 +42,31 @@ public class DayView extends TextView{
   private void setDayBackground() {
     //TODO ADD SPECIAL DAYS
     if(dayModel.isRegionFirstDay()){
-      setBackgroundColor(getResources().getColor(android.R.color.holo_orange_light));
+      setBackgroundColor(getResources().getColor(android.R.color.white));
+      setTextColor(getResources().getColor(android.R.color.black));
     }else if(dayModel.isRegionLastDay()){
-      setBackgroundColor(getResources().getColor(android.R.color.holo_orange_light));
+      setBackgroundColor(getResources().getColor(android.R.color.white));
+      setTextColor(getResources().getColor(android.R.color.black));
     }else if(dayModel.isRegionMiddle()){
-      setBackgroundColor(getResources().getColor(android.R.color.holo_orange_light));
+      setBackgroundColor(getResources().getColor(android.R.color.white));
+      setTextColor(getResources().getColor(android.R.color.black));
     }else if(dayModel.isSelected()){
-      setBackgroundColor(getResources().getColor(android.R.color.holo_orange_light));
+      setBackgroundColor(getResources().getColor(android.R.color.white));
+      setTextColor(getResources().getColor(android.R.color.black));
     }else if(dayModel.isToday()){
       setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
+      setTextColor(getResources().getColor(android.R.color.black));
+    }else {
+      setBackgroundColor(getResources().getColor(android.R.color.black));
+
+      if(!dayModel.isCurrentMont()){
+        setTextColor(getResources().getColor(android.R.color.darker_gray));
+      }else {
+        //current month
+        setTextColor(getResources().getColor(android.R.color.white));
+      }
     }
 
-    if(!dayModel.isCurrentMont()){
-      setTextColor(getResources().getColor(android.R.color.darker_gray));
-    }else {
-      //current month
-      setTextColor(getResources().getColor(android.R.color.black));
-    }
   }
 
   private void setDay(){

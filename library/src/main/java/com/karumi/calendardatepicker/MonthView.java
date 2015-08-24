@@ -19,7 +19,7 @@ import java.util.Date;
  */
 public class MonthView extends LinearLayout {
 
-  private static final int ANIMATION_TIME = 5000;
+  private static final int ANIMATION_TIME = 250;
   private ScrollRunnable scrollRunnable;
   private int widthMeasureSpec;
   private CalendarAdapter calendarAdapter = new BaseCalendarAdapter();
@@ -59,18 +59,9 @@ public class MonthView extends LinearLayout {
       this.addView(rowDays);
     }
 
-    initRowListeners();
   }
 
-  private void initRowListeners() {
-    for (int i = 0; i < getChildCount(); i++) {
-      LinearLayout weekView = (LinearLayout) getChildAt(i);
-      for (int j = 0; j < weekView.getChildCount(); j++) {
-        View dayView = weekView.getChildAt(j);
-        dayView.setOnClickListener(clickDay);
-      }
-    }
-  }
+
 
   public void smoothScrollNextMonth(AnimationMonthListener animationNextListener) {
     this.animationListener = animationNextListener;
@@ -187,6 +178,7 @@ public class MonthView extends LinearLayout {
     DayView dayView = (DayView) weekLayout.getChildAt(dayPos);
     DayModel dayModel = calendarDatePickerModel.getDay();
     dayView.setDayModel(dayModel);
+    dayView.setOnClickListener(clickDay);
   }
 
   private OnClickListener clickDay = new OnClickListener() {
@@ -202,6 +194,21 @@ public class MonthView extends LinearLayout {
     Scroller scroller;
     int lastValue = 0;
     private boolean moveUp;
+
+    private ScrollRunnable(Context context) {
+      scroller = new Scroller(context, new LinearInterpolator());
+    }
+
+    void start(int distance) {
+      if (distance < 0) {
+        moveUp = true;
+      } else {
+        moveUp = false;
+      }
+      lastValue = 0;
+      scroller.startScroll(0, 0, 0, distance, ANIMATION_TIME);
+      postOnAnimation(this);
+    }
 
     @Override public void run() {
       boolean more = scroller.computeScrollOffset();
@@ -297,20 +304,6 @@ public class MonthView extends LinearLayout {
       }
     }
 
-    private ScrollRunnable(Context context) {
-      scroller = new Scroller(context, new LinearInterpolator());
-    }
-
-    void start(int distance) {
-      if (distance < 0) {
-        moveUp = true;
-      } else {
-        moveUp = false;
-      }
-      lastValue = 0;
-      scroller.startScroll(0, 0, 0, distance, ANIMATION_TIME);
-      postOnAnimation(this);
-    }
   }
 
   private void setupChild(View row, int childTop, ViewGroup.LayoutParams p) {

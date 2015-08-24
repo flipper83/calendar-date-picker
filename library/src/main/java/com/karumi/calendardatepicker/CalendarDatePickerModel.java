@@ -1,6 +1,7 @@
 package com.karumi.calendardatepicker;
 
 import android.content.Context;
+import android.util.Log;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -66,7 +67,6 @@ class CalendarDatePickerModel {
     return monthNameFormat.format(currentDate);
   }
 
-
   public Calendar getCalendar() {
     return calendar;
   }
@@ -127,15 +127,10 @@ class CalendarDatePickerModel {
       }
     }
 
-    if (sameMonth(calendar, currentMonth)) {
-      day.setCurrentMont(true);
-    } else {
-      day.setCurrentMont(false);
-    }
+    day.setCurrentMont(sameMonth(calendar, currentMonth));
 
-    if (sameDate(calendar, today)) {
-      day.setToday(true);
-    }
+    day.setToday(sameDate(calendar, today));
+
 
     return day;
   }
@@ -167,17 +162,16 @@ class CalendarDatePickerModel {
   }
 
   private void selectedRange(Calendar calendarSelected) {
-    if((startRange != null) && (endRange != null)){
+    if ((startRange != null) && (endRange != null)) {
       startRange = calendarSelected;
       endRange = null;
-    }else{
+    } else {
       if ((startRange == null) || (calendarSelected.before(startRange))) {
         startRange = calendarSelected;
       } else {
         endRange = calendarSelected;
       }
     }
-
   }
 
   private void selectedSingleSelection(Calendar calendarSelected) {

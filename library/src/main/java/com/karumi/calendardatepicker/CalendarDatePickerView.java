@@ -21,7 +21,7 @@ public class CalendarDatePickerView extends LinearLayout {
   private MonthView monthView;
 
   CalendarDatePickerModel calendarDatePickerModel;
-  private TextView monthTitleView;
+  CalendarTitleView calendarTitleView;
   private ImageView nextButton;
   private ImageView prevButton;
 
@@ -58,7 +58,8 @@ public class CalendarDatePickerView extends LinearLayout {
   private void mapGui(View rootView) {
     dayOfWeekLayout = (LinearLayout) rootView.findViewById(R.id.cdp_ll_day_of_week);
     monthView = (MonthView) rootView.findViewById(R.id.cdp_ll_day_of_month);
-    monthTitleView = (TextView) rootView.findViewById(R.id.cdp_tv_month);
+
+
     nextButton = (ImageView) rootView.findViewById(R.id.cdp_bt_next);
     prevButton = (ImageView) rootView.findViewById(R.id.cdp_bt_prev);
 
@@ -80,7 +81,9 @@ public class CalendarDatePickerView extends LinearLayout {
   private void refreshDays() {
     String currentMonth = calendarDatePickerModel.getCurrentMonth();
 
-    monthTitleView.setText(currentMonth);
+    if(calendarTitleView != null){
+      calendarTitleView.render(currentMonth);
+    }
 
     calendarDatePickerModel.firstOfMonth();
 
